@@ -39,4 +39,17 @@ public class Conta {
         this.dono = dono;
     }
 
+    public void debitar(Double valor) {
+        this.saldo -= valor;
+    }
+
+    public void creditar(Double valor) {
+        this.saldo += valor;
+    }
+
+    public void transferir(Double valor, Conta destino) {
+        this.saldo -= valor;
+        destino.creditar(valor);
+    }
+
 }
